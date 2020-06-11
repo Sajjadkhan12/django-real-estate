@@ -115,14 +115,9 @@
                                         </li>
                                        
                                         <li><a href="blog.html">Blog</a>
-                                            <ul class="drop-menu menu-right">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                                <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                                <li><a href="single-blog.html">Single Bloge</a></li>
-                                            </ul>
+                                           
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -141,45 +136,20 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li><a href="index.html">Home</a>
+                                    <li><a href="{% url 'index' %}">Home</a>
                                         
                                     </li>
-                                    <li><a href="service.html">Service</a>
-                                        <ul>
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="service-details.html">Service details</a></li>
-                                        </ul>
+                                    <li><a href="#">Service</a>
+                                       
                                     </li>
-                                    <li><a href="properties.html">Properties</a>
-                                        <ul>
-                                            <li><a href="properties.html">Properties</a></li>
-                                            <li><a href="properties-left-sidebar.html">Properties left sidebar</a></li>
-                                            <li><a href="properties-right-sidebar.html">Properties right sidebar</a></li>
-                                            <li><a href="properties-details.html">Properties details</a></li>
-                                        </ul>
+                                    <li><a href="{% url 'properties_list' %}">Properties</a>
+                                       
                                     </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="agent.html">Agent</a></li>
-                                            <li><a href="agent-details.html">Agent-details</a></li>
-                                            <li><a href="features.html">Features</a></li>
-                                            <li><a href="service.html">Service</a></li>
-                                            <li><a href="service-details.html">Service details</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
+                                   
+                                    <li><a href="#">Blog</a>
+                                        
                                     </li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                                            <li><a href="single-blog.html">Single Bloge</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

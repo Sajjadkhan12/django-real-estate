@@ -18,3 +18,6 @@ def propertyDetail(request,slug):
     sidebar_homes = Listening.objects.all()[:3]
     home = get_object_or_404(Listening,slug=slug,available=True)
     return render(request,'shelter/property_detail.html',{'home':home,'sidebar_homes':sidebar_homes})
+
+def contact(request):
+    return render(request,'shelter/contact.html')
