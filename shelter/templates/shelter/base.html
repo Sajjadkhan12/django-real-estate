@@ -57,7 +57,7 @@
                                         <img src="{% static 'shelter/images/icons/phone.png' %}" alt="">
                                     </div>
                                     <div class="header-info">
-                                        <h6>+88 (012) 564 979 56</h6>
+                                        <h6>+92 (306) 228 1637</h6>
                                         <p>We are open 9 am - 10pm</p>
                                     </div>
                                 </div>
@@ -66,22 +66,13 @@
                                         <img src="{% static 'shelter/images/icons/mail-open.png' %}" alt="">
                                     </div>
                                     <div class="header-info">
-                                        <h6><a href="mailto:hnasir770@gmail.com">info@sheltek.com</a></h6>
+                                        <h6><a href="mailto:contact@sajjadkhan.me">contact@sajjadkhan.me</a></h6>
                                         <p>You can mail us</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="header-search clearfix">
-                                <form action="#">
-                                    <button class="search-icon" type="submit">
-                                        <img src="{% static 'shelter/images/icons/search.png' %}" alt="">
-                                    </button>
-                                    <input type="text" placeholder="Search...">
-                                </form>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -101,11 +92,11 @@
                                             
                                         </li>
                                         
-                                        <li><a href="service.html">Service</a>
-                                            <ul class="drop-menu">
+                                        <li><a href="{% url 'services' %}">Service</a>
+                                            <!-- <ul class="drop-menu">
                                                 <li><a href="service.html">Service</a></li>
                                                 <li><a href="service-details.html">Service details</a></li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
                                         <li><a href="{% url 'properties_list' %}">Properties</a>
                                            
@@ -114,7 +105,7 @@
                                            
                                         </li>
                                        
-                                        <li><a href="blog.html">Blog</a>
+                                        <li><a href="#">Blog</a>
                                            
                                         </li>
                                         <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -139,7 +130,7 @@
                                     <li><a href="{% url 'index' %}">Home</a>
                                         
                                     </li>
-                                    <li><a href="#">Service</a>
+                                    <li><a href="{% url 'services' %}">Service</a>
                                        
                                     </li>
                                     <li><a href="{% url 'properties_list' %}">Properties</a>
@@ -177,8 +168,8 @@
                                     <img src="{% static 'shelter/images/icons/location-2.png' %}" alt="">
                                     </div>
                                     <div class="address-info">
-                                        <span>8901 Marmora Raod,</span>
-                                        <span>Glasgow, D04  89GR</span>
+                                        <span>Islamabad ,</span>
+                                        <span>Pakistan </span>
                                     </div>
                                 </li>
                                 <li>
@@ -186,8 +177,8 @@
                                         <img src="{% static 'shelter/images/icons/phone-3.png' %}" alt="">
                                     </div>
                                     <div class="address-info">
-                                        <span>Telephone : (801) 4256  9856</span>
-                                        <span>Telephone : (801) 4256  9658</span>
+                                        <span>Telephone : (+92306) 2281  637</span>
+                                        
                                     </div>
                                 </li>
                                 <li>
@@ -195,7 +186,7 @@
                                         <img src="{% static 'shelter/images/icons/world.png' %}" alt="">
                                     </div>
                                     <div class="address-info">
-                                        <span>Email : info@sheltek.com</span>
+                                        <span>Email : contact@sajjadkhan.me</span>
                                         <span>Web :<a href="#" target="_blank"> www.sheltek.com</a></span>
                                     </div>
                                 </li>
@@ -209,7 +200,16 @@
                             <ul class="footer-latest-news">
                                 <li>
                                     <div class="latest-news-image">
-                                        <a href="single-blog.html"><img src="images/blog/1.jpg" alt=""></a>
+                                        <a href="#"><img src="{%static 'shelter/images/blog/1.jpg' %}" alt=""></a>
+                                    </div>
+                                    <div class="latest-news-info">
+                                        <h6><a href="#">Beautiful Home</a></h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor inciidunt ut labore </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="latest-news-image">
+                                        <a href="#"><img src="{%static 'shelter/images/blog/2.jpg' %}" alt=""></a>
                                     </div>
                                     <div class="latest-news-info">
                                         <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -218,19 +218,10 @@
                                 </li>
                                 <li>
                                     <div class="latest-news-image">
-                                        <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                                        <a href="single-blog.html"><img src="{%static 'shelter/images/blog/3.jpg' %}" alt=""></a>
                                     </div>
                                     <div class="latest-news-info">
-                                        <h6><a href="single-blog.html">Beautiful Home</a></h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor inciidunt ut labore </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="latest-news-image">
-                                        <a href="single-blog.html"><img src="images/blog/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="latest-news-info">
-                                        <h6><a href="single-blog.html">Beautiful Home</a></h6>
+                                        <h6><a href="#">Beautiful Home</a></h6>
                                         <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor inciidunt ut labore </p>
                                     </div>
                                 </li>
@@ -243,7 +234,7 @@
                             <h6 class="footer-titel">QUICK CONTACT</h6>
                             <div class="footer-contact">
                                 <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor</p>
-                                <form  id="contact-form-2" action="mail_footer.php" method="post">
+                                <form  id="contact-form-2" action="" method="post">
                                     <input type="email" name="email2" placeholder="Type your E-mail address...">
                                     <textarea name="message2" placeholder="Write here..."></textarea>
                                     <button type="submit" value="send">Send</button>

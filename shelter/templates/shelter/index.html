@@ -63,7 +63,7 @@
     </div>
 
      <!-- FIND HOME AREA START -->
-     <div class="find-home-area bg-blue call-to-bg plr-140 pt-60 pb-20">
+    <div class="find-home-area bg-blue call-to-bg plr-140 pt-60 pb-20">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 col-xs-12">
@@ -74,105 +74,85 @@
                 </div>
                 <div class="col-md-9 col-xs-12">
                     <div class="find-homes">
+                    <form action="{% url 'search' %}" method="GET">
+                       
                         <div class="row">
                             <div class="col-sm-3 col-xs-12">
+                                <div class="find-home-item">
+                                    <input type="text" name="keyword" placeholder="Enter Keyword">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-12">
                                 <div class="find-home-item custom-select">                  
-                                    <select class="selectpicker" title="Location" data-hide-disabled="true" data-live-search="true">
-                                        <optgroup disabled="disabled" label="disabled">
-                                            <option>Hidden</option>
-                                        </optgroup>
-                                        <optgroup label="Australia">
-                                            <option>Sydney</option>
-                                            <option>Melbourne</option>
-                                            <option>Cairns</option>
-                                        </optgroup>
-                                        <optgroup label="USA">
-                                            <option>South Carolina</option>
-                                            <option>Florida</option>
-                                            <option>Rhode Island</option>
-                                        </optgroup>
+                                    <select class="selectpicker" title="Location" data-hide-disabled="true" data-live-search="true" name="location">
+                                       {% for location_key,location_value in search_locations.items %}
+                                        <option>{{ location_value }}</option>
+                                       {% endfor %}
+                                       
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-sm-3 col-xs-12">
-                                <div class="find-home-item custom-select">                  
-                                    <select class="selectpicker" title="Sub - Location" data-hide-disabled="true" data-live-search="true">
-                                        <optgroup disabled="disabled" label="disabled">
-                                            <option>Hidden</option>
-                                        </optgroup>
-                                        <optgroup label="Australia">
-                                            <option>southeastern coast</option>
-                                            <option>southeastern tip</option>
-                                            <option>northwest corner</option>
-                                        </optgroup>
-                                        <optgroup label="USA">
-                                            <option>Charleston</option>
-                                            <option>St. Petersburg</option>
-                                            <option>Newport</option>
-                                        </optgroup>
-                                    </select>
-                                </div> 
-                            </div>
-                            <div class="col-sm-3 col-xs-12">
-                                <div class="find-home-item">
-                                    <input type="text" name="min-area" placeholder="Min area (sqft)">
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-12">
-                                <div class="find-home-item">
-                                    <input type="text" name="max-area" placeholder="Max area (sqft)">
-                                </div>
-                            </div>
+                        
+                           
+                            
                             <div class="col-sm-3 col-xs-12">
                                 <div class="find-home-item  custom-select">                  
-                                    <select class="selectpicker" title="No. of Beadrooms" data-hide-disabled="true">
-                                        <optgroup  label="1">
-                                            <option label="1">1 Beadrooms</option>
-                                            <option>2 Beadrooms</option>
-                                            <option>3 Beadrooms</option>
-                                            <option>4 Beadrooms</option>
-                                            <option>5 Beadrooms</option>
+                                    <select class="selectpicker" title="No. of Bedrooms" data-hide-disabled="true" name="bedrooms">
+                                        <optgroup >
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
                                         </optgroup>
                                     </select>
                                 </div> 
                             </div>
                             <div class="col-sm-3 col-xs-12">
                                 <div class="find-home-item custom-select">                  
-                                    <select class="selectpicker" title="No. of Bathrooms" data-hide-disabled="true">
-                                        <optgroup label="2">
-                                            <option>1 Bathrooms</option>
-                                            <option>2 Bathrooms</option>
-                                            <option>3 Bathrooms</option>
-                                            <option>4 Bathrooms</option>
-                                            <option>5 Bathrooms</option>
+                                    <select class="selectpicker" title="No. of Bathrooms" data-hide-disabled="true" name="bathrooms">
+                                        <optgroup >
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
                                         </optgroup>
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="col-sm-6 col-xs-12">
                                 <div class="row">
-                                    <div class="col-sm-7 col-xs-12">
-                                        <div class="find-home-item">
-                                            <!-- shop-filter -->
-                                            <div class="shop-filter">
-                                                <div class="price_filter">
-                                                    <div class="price_slider_amount">
-                                                        <input type="submit"  value="You range :"/> 
-                                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
-                                                    </div>
-                                                    <div id="slider-range"></div>
-                                                </div>
-                                            </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="find-home-item custom-select">                  
+                                            <select class="selectpicker" title="Select Max Price" data-hide-disabled="true" name="price">
+                                                <optgroup >
+                                                    <option>$1000</option>
+                                                    <option>$2000</option>
+                                                    <option>$3000</option>
+                                                    <option>$4000</option>
+                                                    <option>$6000</option>
+                                                    <option>$7000</option>
+                                                    <option>$8000</option>
+                                                    <option>$9000</option>
+                                                    <option>$10000</option>
+                                                </optgroup>
+                                            </select>
                                         </div>
                                     </div>
+                                    
                                     <div class="col-sm-5 col-xs-12">
                                         <div class="find-home-item mb-0-xs">
-                                            <a class="button-1 btn-block btn-hover-1" href="#">SEARCH</a>
+                                            <button class="button-1 btn-block btn-hover-1" >SEARCH</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -197,7 +177,7 @@
                 </div>
                 <div class="col-sm-6 col-xs-12">
                     <div class="about-image">
-                        <a href="about.html"><img src="{% static 'shelter/images/about/1.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'shelter/images/about/1.jpg' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -222,10 +202,10 @@
                     <div class="col-md-12">
                         <div class="service-item">
                             <div class="service-item-image">
-                                <a href="service-details.html"><img src="{% static 'shelter/images/service/1.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'shelter/images/service/1.jpg' %}" alt=""></a>
                             </div>
                             <div class="service-item-info">
-                                <h5><a href="service-details.html">Sale Property</a></h5>
+                                <h5><a href="#">Sale Property</a></h5>
                                 <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
                             </div>
                         </div>
@@ -234,10 +214,10 @@
                     <div class="col-md-12">
                         <div class="service-item">
                             <div class="service-item-image">
-                                <a href="service-details.html"><img src="{% static 'shelter/images/service/2.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'shelter/images/service/2.jpg' %}" alt=""></a>
                             </div>
                             <div class="service-item-info">
-                                <h5><a href="service-details.html">Buy Property</a></h5>
+                                <h5><a href="#">Buy Property</a></h5>
                                 <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
                             </div>
                         </div>
@@ -246,10 +226,10 @@
                     <div class="col-md-12">
                         <div class="service-item">
                             <div class="service-item-image">
-                                <a href="service-details.html"><img src="{% static 'shelter/images/service/3.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'shelter/images/service/3.jpg' %}" alt=""></a>
                             </div>
                             <div class="service-item-info">
-                                <h5><a href="service-details.html">Rent Property</a></h5>
+                                <h5><a href="#">Rent Property</a></h5>
                                 <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
                             </div>
                         </div>
@@ -258,10 +238,10 @@
                     <div class="col-md-12">
                         <div class="service-item">
                             <div class="service-item-image">
-                                <a href="service-details.html"><img src="{% static 'shelter/images/service/4.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'shelter/images/service/4.jpg' %}" alt=""></a>
                             </div>
                             <div class="service-item-info">
-                                <h5><a href="service-details.html">Property Management</a></h5>
+                                <h5><a href="#">Property Management</a></h5>
                                 <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
                             </div>
                         </div>
@@ -270,10 +250,10 @@
                     <div class="col-md-12">
                         <div class="service-item">
                             <div class="service-item-image">
-                                <a href="service-details.html"><img src="{% static 'shelter/images/service/4.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{% static 'shelter/images/service/4.jpg' %}" alt=""></a>
                             </div>
                             <div class="service-item-info">
-                                <h5><a href="service-details.html">Sale Property</a></h5>
+                                <h5><a href="#">Sale Property</a></h5>
                                 <p>Property sale best theme for litdo eiusmod tempor dolor sit amet, conse tetur adiping eiusmo</p>
                             </div>
                         </div>
@@ -298,7 +278,7 @@
                     <div class="booking-conternt clearfix">
                         <div class="book-house text-white">
                             <h2>BOOK YO`UR APPARTMENT OR HOUSE </h2>
-                            <h2 class="h5">CALL US ON : +0123  456  789  </h2>
+                            <h2 class="h5">CALL US ON : +0306  228  1637  </h2>
                         </div>
                         <div class="booking-imgae">
                             <img src="{% static 'shelter/images/others/booking.png' %}" alt="">
@@ -461,11 +441,12 @@
                                         <ul class="agent-address">
                                             <li><img src="{% static 'shelter/images/icons/phone-2.png' %}" alt="">{{ agent.phone }} </li>
                                             <li><img src="{% static 'shelter/images/icons/mail-close.png' %}" alt="">{{ agent.email }}</li>
+                                            <li><i class="fa fa-skype" aria-hidden="true"></i> {{ agent.skype }}</li>
                                         </ul>
                                         <ul class="social-media">
                                             <li><a href="{{ agent.facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                             <li><a href="{{ agent.twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="{{ agent.skype }}"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                                           
                                             
                                         </ul>
                                     </div>

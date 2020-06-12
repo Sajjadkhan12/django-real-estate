@@ -6,4 +6,6 @@ urlpatterns = [
     path('property-detail/<slug:slug>',views.propertyDetail,name='property_detail'),
     path('properties-list/',views.propertiesList,name='properties_list'),
     path('contact/',views.contact,name='contact'),
+    path('search/',views.searchResult,name='search'),
+    path('services/',views.Services,name='services'),
 ]
