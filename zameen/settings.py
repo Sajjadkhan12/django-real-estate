@@ -57,6 +57,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'shelter.context_processors.search_locations',
+                'shelter.context_processors.quick_contact_form',
             ],
         },
     },

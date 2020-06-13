@@ -1,7 +1,8 @@
-from django.shortcuts import render,get_object_or_404
-from .models import Listening
+from django.shortcuts import render,get_object_or_404,HttpResponse
+from .models import Listening,Quickcontact
 from agents.models import Agent
 from  .locations_data import locations
+from .forms import QuickContactForm
 # Create your views here.
 
 def index(request):
@@ -62,3 +63,12 @@ def searchResult(request):
 
 def Services(request):
     return render(request,'shelter/services.html')
+
+def Quick_Contact(request):
+    return_response = "Thank you your message has been received"
+    if request.method == 'POST':
+        form = QuickContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            saveform = Quickcontact.objects.create(email=cd['email'],textarea=cd['textarea'])
+        return HttpResponse(return_response)

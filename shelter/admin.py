@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Listening
+from .models import Listening,Quickcontact
 
 # Register your models here.
 class ListeningAdmin(admin.ModelAdmin):
@@ -7,3 +7,5 @@ class ListeningAdmin(admin.ModelAdmin):
     search_fields = ['title','location','price']
     list_filter = ('agent',)
 admin.site.register(Listening,ListeningAdmin)
+admin.site.register(Quickcontact)
+

@@ -187,7 +187,7 @@
                                     </div>
                                     <div class="address-info">
                                         <span>Email : contact@sajjadkhan.me</span>
-                                        <span>Web :<a href="#" target="_blank"> www.sheltek.com</a></span>
+                                        <span>Web :<a href="https://www.sajjadkhan.me" target="_blank"> www.sajjadkhan.me</a></span>
                                     </div>
                                 </li>
                             </ul>
@@ -234,12 +234,15 @@
                             <h6 class="footer-titel">QUICK CONTACT</h6>
                             <div class="footer-contact">
                                 <p>Lorem ipsum dolor sit amet, consectetur acinglit sed do eiusmod tempor</p>
-                                <form  id="contact-form-2" action="" method="post">
-                                    <input type="email" name="email2" placeholder="Type your E-mail address...">
-                                    <textarea name="message2" placeholder="Write here..."></textarea>
+                                <form  id="contact-form-2" action="{% url 'quickcontact' %}" method="post">
+                                    {% csrf_token %}
+                                   
+                                    {{quickcontactform}}
                                     <button type="submit" value="send">Send</button>
                                 </form>
-                                <p class="form-messege"></p>
+                               
+                                <p class="form-messege "></p>
+                                
                             </div>
                         </div>
                     </div>

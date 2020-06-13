@@ -33,3 +33,11 @@ class Listening(models.Model):
 
     def get_absolute_url(self):
         return reverse('listing_detail',args=[str(self.slug)])
+
+class Quickcontact(models.Model):
+    email = models.EmailField()
+    textarea = models.TextField(max_length=200)
+    
+    def __str__(self):
+        return self.email
+    
