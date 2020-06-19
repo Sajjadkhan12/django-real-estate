@@ -166,13 +166,18 @@
                                 <!-- leave-massage -->
                                 <div class="col-md-7  col-sm-7 col-xs-12">
                                     <div class="leave-review">
-                                        <h5>Leave a Review</h5>
-                                        <form action="#">
-                                            <input type="text" name="name" placeholder="Your name">
-                                            <input type="email" name="email" placeholder="Email here">
-                                            <textarea></textarea>
-                                            <button type="button" class="submit-btn-1">SUBMIT REVIEW</button>
+                                        <h5>Contact Agent</h5>
+                                        <form id="contact-form-2" action="{% url 'agentcontact' %}"  method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="agentname" value="{{home.agent }}">
+                                            <input type="text" name="name" placeholder="Your name" required>
+                                            <input type="email" name="email" placeholder="Email here" required>
+                                            <textarea placeholder="Your Subject" name="textarea" required></textarea>
+                                            <button type="submit" class="submit-btn-1" value="send">Send</button>
+                                           
                                         </form>
+                                        <p class="form-messege"></p>
+
                                     </div>
                                 </div>
                             </div>

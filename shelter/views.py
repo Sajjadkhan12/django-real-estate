@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,HttpResponse
-from .models import Listening,Quickcontact
+from .models import Listening,Quickcontact,AgentContact
 from agents.models import Agent
 from  .locations_data import locations
 from .forms import QuickContactForm
@@ -13,7 +13,16 @@ def index(request):
 
 
 def propertiesList(request):
-    homes = Listening.objects.all()[:9]
+
+    if 'increment' not in request.session :
+        #declare empty variable 
+        counter = 0 
+        request.session['increment'] = 0
+    
+    request.session['increment'] += 6
+    counter = request.session['increment']
+    
+    homes = Listening.objects.all()[:counter]
     return render(request,'shelter/properties_list.html',{'homes':homes})
 
 def propertyDetail(request,slug):
@@ -72,3 +81,16 @@ def Quick_Contact(request):
             cd = form.cleaned_data
             saveform = Quickcontact.objects.create(email=cd['email'],textarea=cd['textarea'])
         return HttpResponse(return_response)
+
+
+def UserAgentContact(request):
+    return_response = "Thank you Agent Will contact you"
+    if request.method == 'POST':
+        agent_name = request.POST['agentname']
+        user_name = request.POST['name']
+        user_email = request.POST['email']
+        user_subject = request.POST['textarea']
+        agentcontact = AgentContact.objects.create(agentname=agent_name,user_name=user_name,
+                                            user_email=user_email,user_subject=user_subject)
+        return HttpResponse(return_response)
+

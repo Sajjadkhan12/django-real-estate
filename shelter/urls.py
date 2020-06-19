@@ -9,4 +9,5 @@ urlpatterns = [
     path('search/',views.searchResult,name='search'),
     path('services/',views.Services,name='services'),
     path('quick-contact/',views.Quick_Contact,name='quickcontact'),
+    path('contact-agent/',views.UserAgentContact,name='agentcontact')
 ]

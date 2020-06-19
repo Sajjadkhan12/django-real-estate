@@ -40,4 +40,14 @@ class Quickcontact(models.Model):
     
     def __str__(self):
         return self.email
+
+
+class AgentContact(models.Model):
+    agentname = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=100)
+    user_email = models.EmailField()
+    user_subject = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.user_name
     

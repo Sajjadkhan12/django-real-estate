@@ -24,7 +24,7 @@
         <div class="featured-flat-area pt-115 pb-80">
             <div class="container">
                 
-                <div class="featured-flat">
+                <div class="featured-flat" id="loadcontent">
                     <div class="row">
                     {% for home in homes %}
                         <!-- flat-item -->
@@ -65,16 +65,23 @@
                     </div>
                 </div>
                 <!-- pagination-area -->
-                <div class="col-xs-12">
+                <!-- <div class="col-xs-12">
                     <div class="pagination-area mb-60">
                         <ul class="pagination-list text-center">
                             <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
                             <li><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            
                         </ul>
+                       
                     </div>
+                </div> -->
+                <div style="padding-left: 35%; padding-right:40%;">
+                    
+                    <a  class="button-1 btn-block  " href="{% url 'properties_list' %}">Load More</a>
                 </div>
+                
             </div>
         </div>
         
